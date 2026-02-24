@@ -1,0 +1,20 @@
+// CDN URLs for all capybara images
+export const IMAGES = {
+  capyBaby: "https://files.manuscdn.com/user_upload_by_module/session_file/310519663377524166/yAnONPlleGDIPZwn.jpg",
+  capyBaby2: "https://files.manuscdn.com/user_upload_by_module/session_file/310519663377524166/rBvHrGcIubsRjqku.jpg",
+  capyBath: "https://files.manuscdn.com/user_upload_by_module/session_file/310519663377524166/BkUXwACTtFsdZKWF.jpg",
+  capyFlower: "https://files.manuscdn.com/user_upload_by_module/session_file/310519663377524166/mfzWPATVxmRIAgYH.jpg",
+  capyFriends: "https://files.manuscdn.com/user_upload_by_module/session_file/310519663377524166/hWBTQoxmOimdtdKc.jpg",
+  capyMajestic: "https://files.manuscdn.com/user_upload_by_module/session_file/310519663377524166/GcxIAMLJvpnNGoNn.png",
+  capySwim: "https://files.manuscdn.com/user_upload_by_module/session_file/310519663377524166/putKqujfCYLUWDKH.jpg",
+  capyWatermelon: "https://files.manuscdn.com/user_upload_by_module/session_file/310519663377524166/SPkdRLKkyNqsVMfN.jpg",
+  userCapy1: "https://files.manuscdn.com/user_upload_by_module/session_file/310519663377524166/fPmFNmiwvLnghnbM.jpg",
+  userCapy2: "https://files.manuscdn.com/user_upload_by_module/session_file/310519663377524166/nvmWdanjKOchDbVZ.jpg",
+  userCapy3: "https://files.manuscdn.com/user_upload_by_module/session_file/310519663377524166/gUEgziuWdYMebYtG.jpg",
+  userCapy4: "https://files.manuscdn.com/user_upload_by_module/session_file/310519663377524166/GaedQtasxjrIaDAd.jpg",
+  userCapy5: "https://files.manuscdn.com/user_upload_by_module/session_file/310519663377524166/tngURajyPAnfWEku.jpg",
+  userCapy6: "https://files.manuscdn.com/user_upload_by_module/session_file/310519663377524166/LuFfHtmJNOBXtmid.jpg",
+  userCapy7: "https://files.manuscdn.com/user_upload_by_module/session_file/310519663377524166/ZzNKVOaKKYUviUNM.jpg",
+  userCapy8: "https://files.manuscdn.com/user_upload_by_module/session_file/310519663377524166/KKGQLtPNKeJDDviS.jpg",
+  userCapy9: "https://files.manuscdn.com/user_upload_by_module/session_file/310519663377524166/pgbrLkVGBHaWgUfx.jpg",
+} as const;

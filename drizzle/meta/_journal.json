@@ -1,0 +1,27 @@
+{
+  "version": "7",
+  "dialect": "mysql",
+  "entries": [
+    {
+      "idx": 0,
+      "version": "5",
+      "when": 1771944608660,
+      "tag": "0000_kind_bloodscream",
+      "breakpoints": true
+    },
+    {
+      "idx": 1,
+      "version": "5",
+      "when": 1771945738407,
+      "tag": "0001_concerned_shen",
+      "breakpoints": true
+    },
+    {
+      "idx": 2,
+      "version": "5",
+      "when": 1771946673670,
+      "tag": "0002_high_sabra",
+      "breakpoints": true
+    }
+  ]
+}
