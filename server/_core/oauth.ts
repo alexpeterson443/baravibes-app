@@ -1,4 +1,4 @@
-import { COOKIE_NAME, ONE_YEAR_MS } from "@shared/const";
+﻿import { COOKIE_NAME, ONE_YEAR_MS } from "@shared/const";
 import type { Express, Request, Response } from "express";
 import * as db from "../db";
 import { getSessionCookieOptions } from "./cookies";
@@ -10,7 +10,39 @@ function getQueryParam(req: Request, key: string): string | undefined {
 }
 
 export function registerOAuthRoutes(app: Express) {
-  app.get("/api/oauth/callback", async (req: Request, res: Response) => {
+  app.get("/api/oauth/start", async (req: Request, res: Response) => {
+  const appId = String(req.query.appId ?? "");
+  const redirectUri = String(req.query.redirectUri ?? "");
+  const state = String(req.query.state ?? "");
+  const type = String(req.query.type ?? "signin");
+
+  if (!redirectUri) return res.status(400).send("Missing redirectUri");
+  if (!state) return res.status(400).send("Missing state");
+
+  try {
+    // Your SDK MUST have some way to build an authorize URL. If it doesn't, that's the real bug.
+    const anySdk = sdk as any;
+
+    const url =
+      (typeof anySdk.getAuthorizationUrl === "function" && (await anySdk.getAuthorizationUrl({ appId, redirectUri, state, type }))) ||
+      (typeof anySdk.getAuthorizeUrl === "function" && (await anySdk.getAuthorizeUrl({ appId, redirectUri, state, type }))) ||
+      (typeof anySdk.getLoginUrl === "function" && (await anySdk.getLoginUrl({ appId, redirectUri, state, type }))) ||
+      null;
+
+    if (!url) {
+      return res.status(500).send(
+        "OAuth start route exists, but no SDK authorize-url helper found. Add one in server/_core/sdk.ts."
+      );
+    }
+
+    return res.redirect(url);
+  } catch (err) {
+    console.error(err);
+    return res.status(500).send("Failed to start OAuth flow");
+  }
+});
+
+app.get("/api/oauth/callback", async (req: Request, res: Response) => {
     const code = getQueryParam(req, "code");
     const state = getQueryParam(req, "state");
 
@@ -51,3 +83,4 @@ export function registerOAuthRoutes(app: Express) {
     }
   });
 }
+

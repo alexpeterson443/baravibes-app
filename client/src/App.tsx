@@ -1,16 +1,4 @@
-import { Toaster } from "@/components/ui/sonner";
-import { TooltipProvider } from "@/components/ui/tooltip";
-import NotFound from "@/pages/NotFound";
-import { Route, Switch } from "wouter";
-import ErrorBoundary from "./components/ErrorBoundary";
-import { ThemeProvider } from "./contexts/ThemeContext";
-import Home from "./pages/Home";
-import Account from "./pages/Account";
-import Settings from "./pages/Settings";
-import Admin from "./pages/Admin";
-import { PreferencesProvider } from "./contexts/PreferencesContext";
-
-function Router() {
+﻿ param($m) $m.Value + "import AppAuth from `"./pages/AppAuth`";`r`n" function Router() {
   return (
     <Switch>
       <Route path={"/"} component={Home} />
@@ -20,6 +8,7 @@ function Router() {
       <Route path={"/404"} component={NotFound} />
       {/* Final fallback route */}
       <Route component={NotFound} />
+      <Route path="/app-auth" component={AppAuth} />
     </Switch>
   );
 }
@@ -43,3 +32,4 @@ function App() {
 }
 
 export default App;
+
